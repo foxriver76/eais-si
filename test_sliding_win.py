@@ -61,8 +61,8 @@ for i in range(ITER):
     else:
         all_data = np.concatenate((all_data, x))
         
-    # TODO instead of all data fit a sliding window here
-    off_pca.fit(all_data)
+    # instead of all data fit a sliding window here
+    off_pca.fit(all_data[max(0, i-150):i*BATCH_SIZE+BATCH_SIZE])
     transformed_data[i*BATCH_SIZE:i*BATCH_SIZE+BATCH_SIZE] = pca.transform(x)
     data = off_pca.transform(x)
     
@@ -77,7 +77,7 @@ for i in range(ITER):
     if off_pcs is not None:
         sim = np.diag(cosine_similarity(off_pcs, off_pca.components_))
         all_off_pcs.append(off_pca.components_)
-        if sim[0] < 0.5:
+        if sim[0] < 0.8:
             print(f'offline drift detected {i * BATCH_SIZE}, should be {DRIFT_AT}')
 
     # GET Principal Components
