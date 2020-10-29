@@ -26,6 +26,8 @@ LOW_DRIFT = []
 HIGH_DRIFT_TP = []
 LOW_DRIFT_TP = []
 
+plt.rcParams["figure.figsize"] = (10, 3)
+
 for i in range(2000):
     i += 6000
     HIGH_DRIFT.append(1 if HIGH_DIM_DRIFTS.count(i) == 1 else None)
