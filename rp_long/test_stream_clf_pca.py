@@ -10,8 +10,8 @@ import time
 import copy
 from skmultiflow.data import ConceptDriftStream, STAGGERGenerator, SEAGenerator, FileStream, LEDGeneratorDrift, MIXEDGenerator, SineGenerator
 from skmultiflow.lazy import SAMKNN
-from skmultiflow.trees import HAT
-from skmultiflow.meta import AdaptiveRandomForest
+from skmultiflow.trees import HAT, HoeffdingTree
+from skmultiflow.meta import AdaptiveRandomForestClassifier as ARF
 from skmultiflow.bayes import NaiveBayes
 import numpy as np
 from sklearn.metrics import accuracy_score, cohen_kappa_score
@@ -20,13 +20,15 @@ from bix.classifiers.adaptive_rslvq import ARSLVQ
 from inc_pca import IncPCA
 from rff_base import Base as RFF
 
+# TODO make batch_size of 50
+BATCH_SIZE = 50
+
 def low_dim_test(stream, clf, n_samples):
     """Test in low dimensional space - enrich then project samples"""
     y_true_sum = np.zeros(n_samples - 1)
     y_pred_sum = np.zeros(n_samples - 1)
 
-    stream.prepare_for_use()
-    stream.next_sample()
+    stream.next_sample(BATCH_SIZE)
 
     # n_rand_dims = 10000 - stream.current_sample_x.size
     # multiply = n_rand_dims // stream.current_sample_x.size
@@ -37,16 +39,15 @@ def low_dim_test(stream, clf, n_samples):
     #         (current_sample_x, stream.current_sample_x), axis=1)
 
     """Create PCA and RFF"""
-    rff = RFF(rand_mat_type='rff', dim_kernel=500, std_kernel=0.5, W=None)
+    rff = RFF(rand_mat_type='rff', dim_kernel=250, std_kernel=0.5, W=None)
     rff.set_weight(stream.current_sample_x.shape[1])
-    pca = IncPCA(n_components=50, forgetting_factor=1)
+    pca = IncPCA(n_components=48, forgetting_factor=1)
     # sparse_transformer_li = SparseRandomProjection(
     #     n_components=1000, density='auto')
 
     """Create projection matrix"""
     # sparse_transformer_li.fit(current_sample_x)
-    current_sample_x = rff.conv(stream.current_sample_x)
-    pca.partial_fit(current_sample_x)
+    current_sample_x = np.asarray(rff.conv(stream.current_sample_x))
 
     """Iteration for projected dims"""
     """5 fold CV"""
@@ -54,22 +55,20 @@ def low_dim_test(stream, clf, n_samples):
     acc_collect = []
     time_collect = []
     for _ in range(5):
-        for i in range(n_samples):
-            stream.next_sample()
+        for i in range(n_samples // BATCH_SIZE):
+            stream.next_sample(BATCH_SIZE)
 
-            """We have to enrich the sample  using RFF"""
-            # enhance dims
-            # current_sample_x = [[]]
-            # for _m in range(multiply):
-            #     current_sample_x = np.concatenate(
-            #         (current_sample_x, stream.current_sample_x), axis=1)
-            current_sample_x = rff.conv(stream.current_sample_x)
+            """We have to enrich the sample using RFF"""
+            current_sample_x = np.asarray(rff.conv(stream.current_sample_x))
+
+            pca.partial_fit(current_sample_x)
 
             if i == 0:
                 """Pretrain Classifier"""
                 pretrain_size = 500
                 stream.next_sample(pretrain_size)
-                current_sample_enhanced = rff.conv(stream.current_sample_x)
+                current_sample_enhanced = np.asarray(rff.conv(stream.current_sample_x))
+                pca.partial_fit(current_sample_enhanced)
                 # current_sample_enhanced = [[] for _p in range(pretrain_size)]
                 # for _m in range(multiply):
                 #     current_sample_enhanced = np.concatenate(
@@ -91,8 +90,8 @@ def low_dim_test(stream, clf, n_samples):
                 reduced_x, stream.current_sample_y.ravel(), classes=stream.target_values)
 
             """Save true and predicted y"""
-            y_true_sum[i - 1] = stream.current_sample_y
-            y_pred_sum[i - 1] = y_pred
+            y_true_sum[i * BATCH_SIZE : i * BATCH_SIZE + BATCH_SIZE] = stream.current_sample_y.ravel()
+            y_pred_sum[i * BATCH_SIZE : i * BATCH_SIZE + BATCH_SIZE] = y_pred
 
         """When finished calc acc score"""
         time_sum = time.time() - start_time
@@ -116,12 +115,11 @@ def high_dim_test(stream, clf, n_samples):
     y_true_sum = np.zeros(n_samples - 1)
     y_pred_sum = np.zeros(n_samples - 1)
 
-    stream.prepare_for_use()
     stream.next_sample()
 
     # n_rand_dims = 10000 - stream.current_sample_x.size
     # multiply = n_rand_dims // stream.current_sample_x.size
-    rff = RFF(rand_mat_type='rff', dim_kernel=500, std_kernel=0.5, W=None)
+    rff = RFF(rand_mat_type='rff', dim_kernel=250, std_kernel=0.5, W=None)
     rff.set_weight(stream.current_sample_x.shape[1])
 
     """Iteration for original dim"""
@@ -134,13 +132,13 @@ def high_dim_test(stream, clf, n_samples):
         for i in range(n_samples):
             stream.next_sample()
 
-            """We have to enrich the sample with meaningless random dimensions"""
+            """We have to enrich the sample with RFF"""
             # enhance dims
             # current_sample_x = [[]]
             # for _m in range(multiply):
             #     current_sample_x = np.concatenate(
             #         (current_sample_x, stream.current_sample_x), axis=1)
-            current_sample_x = rff.conv(stream.current_sample_x)
+            current_sample_x = np.asarray(rff.conv(stream.current_sample_x))
 
             if i == 0:
                 """Pretrain Classifier"""
@@ -152,10 +150,10 @@ def high_dim_test(stream, clf, n_samples):
                 # for _m in range(multiply):
                 #     current_sample_enhanced = np.concatenate(
                 #         (current_sample_enhanced, stream.current_sample_x), axis=1)
-                current_sample_enhanced = rff.conv(stream.current_sample_x)
-
-                clf.partial_fit(current_sample_enhanced, stream.current_sample_y.ravel(
-                ), classes=stream.target_values)
+                current_sample_enhanced = np.asarray(rff.conv(stream.current_sample_x))
+                
+                clf.partial_fit(current_sample_enhanced, stream.current_sample_y.ravel(),
+                                classes=stream.target_values)
                 start_time = time.time()
                 continue
 
@@ -257,13 +255,13 @@ if __name__ == '__main__':
         f.write('{}:\n'.format(stream.name))
         f.close()
             
-        samknn = AdaptiveRandomForest()
-        high_dim_test(copy.copy(stream), copy.copy(samknn), N_SAMPLES)
-        low_dim_test(copy.copy(stream), copy.copy(samknn), N_SAMPLES)
+        # arf = ARF()
+        # high_dim_test(copy.copy(stream), copy.copy(arf), N_SAMPLES)
+        # low_dim_test(copy.copy(stream), copy.copy(arf), N_SAMPLES)
 
-        arslvq = ARSLVQ(gradient_descent='Adadelta')
-        high_dim_test(copy.copy(stream), copy.copy(arslvq), N_SAMPLES)
-        low_dim_test(copy.copy(stream), copy.copy(arslvq), N_SAMPLES)
+        # arslvq = ARSLVQ(gradient_descent='Adadelta')
+        # high_dim_test(copy.copy(stream), copy.copy(arslvq), N_SAMPLES)
+        # low_dim_test(copy.copy(stream), copy.copy(arslvq), N_SAMPLES)
 
         hat = HAT()
         high_dim_test(copy.copy(stream), copy.copy(hat), N_SAMPLES)
