@@ -20,13 +20,12 @@ from bix.classifiers.adaptive_rslvq import ARSLVQ
 from inc_pca import IncPCA
 from rff_base import Base as RFF
 
-# TODO make batch_size of 50
 BATCH_SIZE = 50
 
 def low_dim_test(stream, clf, n_samples):
     """Test in low dimensional space - enrich then project samples"""
-    y_true_sum = np.zeros(n_samples - 1)
-    y_pred_sum = np.zeros(n_samples - 1)
+    y_true_sum = np.zeros(n_samples)
+    y_pred_sum = np.zeros(n_samples)
 
     stream.next_sample(BATCH_SIZE)
 
@@ -254,6 +253,10 @@ if __name__ == '__main__':
         f = open('result.txt', 'a+')
         f.write('{}:\n'.format(stream.name))
         f.close()
+        
+        nb = NaiveBayes()
+        # high_dim_test(copy.copy(stream), copy.copy(nb), N_SAMPLES)
+        low_dim_test(copy.copy(stream), copy.copy(nb), N_SAMPLES)
             
         # arf = ARF()
         # high_dim_test(copy.copy(stream), copy.copy(arf), N_SAMPLES)
@@ -263,7 +266,7 @@ if __name__ == '__main__':
         # high_dim_test(copy.copy(stream), copy.copy(arslvq), N_SAMPLES)
         # low_dim_test(copy.copy(stream), copy.copy(arslvq), N_SAMPLES)
 
-        hat = HAT()
-        high_dim_test(copy.copy(stream), copy.copy(hat), N_SAMPLES)
-        low_dim_test(copy.copy(stream), copy.copy(hat), N_SAMPLES)
+        # hat = HAT()
+        # high_dim_test(copy.copy(stream), copy.copy(hat), N_SAMPLES)
+        # low_dim_test(copy.copy(stream), copy.copy(hat), N_SAMPLES)
         
