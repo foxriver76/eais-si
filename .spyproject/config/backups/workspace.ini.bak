@@ -6,5 +6,5 @@ save_non_project_files = False
 
 [main]
 version = 0.2.0
-recent_files = ['test.py']
+recent_files = ['test_sliding_win.py', 'test_per_class_slid_win.py']
 

@@ -15,7 +15,7 @@ from sklearn.decomposition import PCA
 ### CONFIGURATION START ###
 BATCH_SIZE:int = 50
 ITER:int = 500
-K_DIM:int = 2
+K_DIM:int = 3
 PLT_INTERACTIVE:bool = True
 DRIFT_AT:int = int(BATCH_SIZE * ITER / 2)
 SLID_WIN_SIZE:int = 200
@@ -32,9 +32,9 @@ SLID_WIN_SIZE:int = 200
 #                             drift_stream=STAGGERGenerator(classification_function=1), 
 #                             position=DRIFT_AT, width=1000)
 
-stream = ConceptDriftStream(stream=SineGenerator(classification_function=1), 
-                            drift_stream=SineGenerator(classification_function=1), 
-                            position=DRIFT_AT, width=1000)
+stream = ConceptDriftStream(stream=STAGGERGenerator(classification_function=1), 
+                            drift_stream=STAGGERGenerator(classification_function=1), 
+                            position=DRIFT_AT, width=2000)
 
 pca = [IncPCA(n_components=K_DIM, forgetting_factor=1) for i in range(stream.n_classes)]
 off_pca = [PCA(n_components=K_DIM) for i in range(stream.n_classes)]
@@ -82,7 +82,7 @@ for i in range(ITER):
                 
             all_off_pcs[j].append(off_pca[j].components_)
             
-            if sim is not None and sim[0] < 0.95:
+            if sim is not None and sim[0] < 0.9:
                 print(f'offline drift detected {i * BATCH_SIZE}, should be {DRIFT_AT}')
   
         

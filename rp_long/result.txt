@@ -1,0 +1,162 @@
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+Evaluated AdaptiveRandomForestClassifier(binary_split=False, disable_weighted_vote=False,
+                               drift_detection_method=ADWIN(delta=0.001),
+                               grace_period=50, lambda_value=6,
+                               leaf_prediction='nba', max_byte_size=33554432,
+                               max_features=22, memory_estimate_period=2000000,
+                               n_estimators=10, nb_threshold=0,
+                               no_preprune=False, nominal_attributes=None,
+                               performance_metric='acc', random_state=None,
+                               remove_poor_atts=False, split_confidence=0.01,
+                               split_criterion='info_gain',
+                               stop_mem_management=False, tie_threshold=0.05,
+                               warning_detection_method=ADWIN(delta=0.01)) high dim
+Time: 948.2471935272217+-80.82845219014597
+Acc: 0.7460629212584251+-0.01443172432190158
+Kappa: 0.0+-0.0
+
+SEA GRADUAL:
+Evaluated AdaptiveRandomForestClassifier(binary_split=False, disable_weighted_vote=False,
+                               drift_detection_method=ADWIN(delta=0.001),
+                               grace_period=50, lambda_value=6,
+                               leaf_prediction='nba', max_byte_size=33554432,
+                               max_features=22, memory_estimate_period=2000000,
+                               n_estimators=10, nb_threshold=0,
+                               no_preprune=False, nominal_attributes=None,
+                               performance_metric='acc', random_state=None,
+                               remove_poor_atts=False, split_confidence=0.01,
+                               split_criterion='info_gain',
+                               stop_mem_management=False, tie_threshold=0.05,
+                               warning_detection_method=ADWIN(delta=0.01)) high dim
+Time: 7274.054046201706+-12921.058322502384
+Acc: 0.7476749534990701+-0.01416366704982605
+Kappa: 0.0+-0.0
+
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+Evaluated ARSLVQ(batch_size=1, decay_rate=0.9, gradient_descent='Adadelta',
+       initial_prototypes=None, learning_rate=0.001, prototypes_per_class=1,
+       random_state=None, sigma=1.0) high dim
+Time: 50.49013948440552+-6.670869122510321
+Acc: 0.30976219524390486+-0.010929946134410468
+Kappa: -0.006415702059552908+-0.003306934648678952
+
+SEA GRADUAL:
+Evaluated ARSLVQ(batch_size=1, decay_rate=0.9, gradient_descent='Adadelta',
+       initial_prototypes=None, learning_rate=0.001, prototypes_per_class=1,
+       random_state=None, sigma=1.0) high dim
+Time: 43.22861642837525+-1.7595494946562098
+Acc: 0.31639432788655775+-0.011543094284797705
+Kappa: -0.0028511443401789682+-0.002803585436032495
+
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+Evaluated NaiveBayes(nominal_attributes=None) high dim
+Time: 232.62866282463074+-1.432574086122865
+Acc: 0.9466229324586491+-0.004907486864726142
+Kappa: 0.8651178870988261+-0.009649771879898099
+
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+SEA GRADUAL:
+Evaluated NaiveBayes(nominal_attributes=None) low dim
+Time: 26.259367656707763+-0.05967023087460099
+Acc: 0.7290840000000001+-0.0134037093373439
+Kappa: 0.07012939668016709+-0.002658383657422976
+
+SEA ABRUPBT:
+Evaluated NaiveBayes(nominal_attributes=None) low dim
+Time: 26.17659683227539+-0.19021674479734238
+Acc: 0.5947479999999999+-0.009362611601471048
+Kappa: 0.0018049341918120686+-0.0025194981801769747
+
+LED GRADUAL:
+Evaluated NaiveBayes(nominal_attributes=None) low dim
+Time: 89.53574333190917+-2.582493011485957
+Acc: 0.16665999999999997+-0.04293439833047623
+Kappa: 0.07332991125491659+-0.0475353513569999
+
+LED ABRUPBT:
