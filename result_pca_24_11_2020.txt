@@ -1,0 +1,30 @@
+Evaluated ARSLVQ(batch_size=1, decay_rate=0.9, gradient_descent='Adadelta',
+       initial_prototypes=None, learning_rate=0.001, prototypes_per_class=2,
+       random_state=None, sigma=1.0) low dim
+Time: 492.5614802837372+-3.2454129044231608
+Acc: 0.9826599326599327+-0.0001146760024641494
+Kappa: 0.4986370420135796+-0.0038592269583859343
+
+Evaluated SAMKNNClassifier(ltm_size=0.4, max_window_size=None, min_stm_size=50,
+                 n_neighbors=5, stm_size_option='maxACCApprox', use_ltm=True,
+                 weighting='distance') low dim
+Time: 20.78372139930725+-0.37622510271590187
+Acc: 0.9821212121212122+-0.0
+Kappa: 0.0+-0.0
+
+Evaluated AdaptiveRandomForestClassifier(binary_split=False, disable_weighted_vote=False,
+                               drift_detection_method=ADWIN(delta=0.001),
+                               grace_period=50, lambda_value=6,
+                               leaf_prediction='nba', max_byte_size=33554432,
+                               max_features=7, memory_estimate_period=2000000,
+                               n_estimators=10, nb_threshold=0,
+                               no_preprune=False, nominal_attributes=None,
+                               performance_metric='acc', random_state=None,
+                               remove_poor_atts=False, split_confidence=0.01,
+                               split_criterion='info_gain',
+                               stop_mem_management=False, tie_threshold=0.05,
+                               warning_detection_method=ADWIN(delta=0.01)) low dim
+Time: 2001.7210408687592+-169.65083399655262
+Acc: 0.9852659932659933+-0.0001077441077441288
+Kappa: 0.6080395667999687+-0.004852351981516219
+
