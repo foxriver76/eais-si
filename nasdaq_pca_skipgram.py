@@ -8,20 +8,23 @@ Created on Thu Dec 19 11:03:57 2019
 
 import numpy as np
 # from skmultiflow.trees import HoeffdingTree as HT
-from skmultiflow.lazy import SAMKNNClassifier as SAMKNN
+from skmultiflow.lazy import SAMKNN
 from sklearn.metrics import accuracy_score
 import time, copy
 from sklearn.random_projection import SparseRandomProjection
 from sklearn.metrics import cohen_kappa_score
-from skmultiflow.bayes import NaiveBayes
-from bix.classifiers.adaptive_rslvq import ARSLVQ as RSLVQ
+# from skmultiflow.bayes import NaiveBayes
+from arslvq import RobustSoftLearningVectorQuantization as RSLVQ
+from skmultiflow.meta import AdaptiveRandomForest as ARF
+
 transformer = SparseRandomProjection(n_components=1000)
 classes = np.arange(0, 15, 1)
 
 from inc_pca import IncPCA
 
 
-f = open('res.txt', 'a+')
+res_file = 'res_skip.txt'
+f = open(res_file, 'a+')
 f.write('SKIP-GRAM\n')
 f.close()
 data = np.load('skip-gram-embed-w-label.npy')
@@ -37,9 +40,9 @@ data = np.load('skip-gram-embed-w-label.npy')
 # f.close()
 
 # HIGH-DIM
-X, y = data[:, :-1], data[:, -1]
+# X, y = data[:, :-1], data[:, -1]
 
-clfs = [RSLVQ(prototypes_per_class=2,gradient_descent="Adadelta"), SAMKNN()]
+# clfs = [RSLVQ(prototypes_per_class=2,gradient_descent="adadelta"), SAMKNN(), ARF()]
 
 # for clf in clfs:
 #     acc_fold = []
@@ -88,7 +91,7 @@ clfs = [RSLVQ(prototypes_per_class=2,gradient_descent="Adadelta"), SAMKNN()]
 print("starting..")
 X, y = data[:, :-1], data[:, -1]
 batch_size = 60
-clfs = [RSLVQ(prototypes_per_class=2,gradient_descent="Adadelta"), SAMKNN()]##HT()
+clfs = [RSLVQ(prototypes_per_class=2,gradient_descent="adadelta"), ARF(), SAMKNN()]
 for clf in clfs:
     acc_fold = []
     kappa_fold = []
@@ -107,7 +110,7 @@ for clf in clfs:
         # Learn RP
         transformer.partial_fit(x) #nComponents must be smaller than or equal to nSample
         x = transformer.transform(x)
-        _clf.partial_fit(x, y,classes=classes)
+        _clf.partial_fit(x, y, classes=classes)
         
         for i in range(data.shape[0]-batch_size):
             x = data[i:i+batch_size, :-1]
@@ -118,7 +121,7 @@ for clf in clfs:
         
             y_true.extend(y[0])
             # update clf
-            _clf.partial_fit(x, y[0].tolist())
+            _clf.partial_fit(x, y[0])
         
         print('low fold skipgram done')
         
@@ -126,7 +129,7 @@ for clf in clfs:
         kappa_fold.append(cohen_kappa_score(y_true, y_pred))
         time_fold.append(time.time() - start_time)
         
-    res_file = open('res.txt', 'a+')
+    res_file = open(res_file, 'a+')
     res_file.write(50 * '-')
     res_file.write('\n')
     res_file.write(f'Low dim test: \n{_clf}\n')
