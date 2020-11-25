@@ -378,7 +378,7 @@ LOW_DRIFT = []
 HIGH_DRIFT_TP = []
 LOW_DRIFT_TP = []
 
-plt.rcParams["figure.figsize"] = (10, 3)
+plt.rcParams["figure.figsize"] = (10, 4)
 
 for i in range(2000):
     i += 2000

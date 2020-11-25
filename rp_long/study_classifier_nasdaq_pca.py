@@ -8,7 +8,7 @@ Created on Tue Jun 11 14:31:21 2019
 
 from skmultiflow.data import ConceptDriftStream, STAGGERGenerator, SEAGenerator, FileStream,DataStream
 from bix.classifiers.adaptive_rslvq import ARSLVQ
-from skmultiflow.lazy import SAMKNN
+from skmultiflow.lazy import SAMKNNClassifier as SAMKNN
 
 from skmultiflow.trees import HAT
 from skmultiflow.meta import AdaptiveRandomForestClassifier
@@ -18,9 +18,11 @@ from sklearn.metrics import accuracy_score, cohen_kappa_score
 import time
 import copy
 from inc_pca import IncPCA
-from rslvq import RSLVQ as asl
+# from rslvq import RSLVQ as asl
 # from rrslvq import ReactiveRobustSoftLearningVectorQuantization
+
 import pandas as pd
+
 def low_dim_test(stream, clf, n_samples):
     PRETRAIN_SIZE = 500
     batch_size = 50
@@ -29,8 +31,7 @@ def low_dim_test(stream, clf, n_samples):
     y_true_sum = np.zeros(n_samples)
     y_pred_sum = np.zeros(n_samples)
 
-    stream.prepare_for_use()
-    classes = np.arange(0,15,1).tolist()
+    classes = np.arange(0, 15, 1).tolist()
     transformer = IncPCA(n_components=50, forgetting_factor=1)
     
     """Create projection matrix"""
@@ -47,7 +48,6 @@ def low_dim_test(stream, clf, n_samples):
             
             if i == 0:
                 """Pretrain Classifier"""
-
                 stream.next_sample(PRETRAIN_SIZE)
                 transformer.partial_fit(stream.current_sample_x)
                 reduced_x = transformer.transform(stream.current_sample_x)
@@ -85,9 +85,7 @@ def high_dim_test(stream, clf, n_samples):
     y_true_sum = np.zeros(n_samples - 1)
     y_pred_sum = np.zeros(n_samples - 1)
     
-    stream.prepare_for_use()
     stream.next_sample()
-    
     
     """Iteration for original dim"""
     """5 fold CV"""
@@ -170,7 +168,7 @@ if __name__ == '__main__':
     stream = FileStream('nasdaq.csv',target_idx=-1)
     n_samples = stream.n_samples
     
-    """Evaluate on RRSLVQ,ARSLVQ, SAM and HAT"""
+    """Evaluate on RRSLVQ, ARSLVQ, SAM and HAT"""
     # rrslvq = ReactiveRobustSoftLearningVectorQuantization(prototypes_per_class=2,confidence=1e-5)
     # # high_dim_test(copy.copy(stream), copy.copy(arslvq), n_samples)
     # low_dim_test(copy.copy(stream), copy.copy(rrslvq), n_samples)

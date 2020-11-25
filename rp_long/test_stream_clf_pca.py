@@ -9,8 +9,9 @@ Created on Mon Nov  2 09:01:33 2020
 import time
 import copy
 from skmultiflow.data import ConceptDriftStream, STAGGERGenerator, SEAGenerator, FileStream, LEDGeneratorDrift, MIXEDGenerator, SineGenerator
-from skmultiflow.lazy import SAMKNN
-from skmultiflow.trees import HAT, HoeffdingTree
+from skmultiflow.lazy import SAMKNNClassifier as SAMKNN
+from skmultiflow.trees import HoeffdingAdaptiveTreeClassifier as HAT
+from skmultiflow.meta import OzaBaggingClassifier as OzaBagging
 from skmultiflow.meta import AdaptiveRandomForestClassifier as ARF
 from skmultiflow.bayes import NaiveBayes
 import numpy as np
@@ -46,7 +47,7 @@ def low_dim_test(stream, clf, n_samples):
 
     """Create projection matrix"""
     # sparse_transformer_li.fit(current_sample_x)
-    current_sample_x = np.asarray(rff.conv(stream.current_sample_x))
+    current_sample_x = rff.conv(stream.current_sample_x)
 
     """Iteration for projected dims"""
     """5 fold CV"""
@@ -58,7 +59,7 @@ def low_dim_test(stream, clf, n_samples):
             stream.next_sample(BATCH_SIZE)
 
             """We have to enrich the sample using RFF"""
-            current_sample_x = np.asarray(rff.conv(stream.current_sample_x))
+            current_sample_x = rff.conv(stream.current_sample_x)
 
             pca.partial_fit(current_sample_x)
 
@@ -66,7 +67,7 @@ def low_dim_test(stream, clf, n_samples):
                 """Pretrain Classifier"""
                 pretrain_size = 500
                 stream.next_sample(pretrain_size)
-                current_sample_enhanced = np.asarray(rff.conv(stream.current_sample_x))
+                current_sample_enhanced = rff.conv(stream.current_sample_x)
                 pca.partial_fit(current_sample_enhanced)
                 # current_sample_enhanced = [[] for _p in range(pretrain_size)]
                 # for _m in range(multiply):
@@ -137,7 +138,7 @@ def high_dim_test(stream, clf, n_samples):
             # for _m in range(multiply):
             #     current_sample_x = np.concatenate(
             #         (current_sample_x, stream.current_sample_x), axis=1)
-            current_sample_x = np.asarray(rff.conv(stream.current_sample_x))
+            current_sample_x = rff.conv(stream.current_sample_x)
 
             if i == 0:
                 """Pretrain Classifier"""
@@ -149,7 +150,7 @@ def high_dim_test(stream, clf, n_samples):
                 # for _m in range(multiply):
                 #     current_sample_enhanced = np.concatenate(
                 #         (current_sample_enhanced, stream.current_sample_x), axis=1)
-                current_sample_enhanced = np.asarray(rff.conv(stream.current_sample_x))
+                current_sample_enhanced = rff.conv(stream.current_sample_x)
                 
                 clf.partial_fit(current_sample_enhanced, stream.current_sample_y.ravel(),
                                 classes=stream.target_values)
@@ -216,57 +217,68 @@ if __name__ == '__main__':
     stream.name = 'SEA ABRUPBT'
     STREAMS.append(stream)
 
-    """GRADUAL LED"""
-    stream = ConceptDriftStream(LEDGeneratorDrift(has_noise=False, noise_percentage=0.0, n_drift_features=3),
-                                drift_stream=LEDGeneratorDrift(
-                                    has_noise=False, noise_percentage=0.0, n_drift_features=7),
-                                width=N_SAMPLES / 5, position=N_SAMPLES / 2)
-    stream.name = 'LED GRADUAL'
-    STREAMS.append(stream)
+    # """GRADUAL LED"""
+    # stream = ConceptDriftStream(LEDGeneratorDrift(has_noise=False, noise_percentage=0.0, n_drift_features=3),
+    #                             drift_stream=LEDGeneratorDrift(
+    #                                 has_noise=False, noise_percentage=0.0, n_drift_features=7),
+    #                             width=N_SAMPLES / 5, position=N_SAMPLES / 2)
+    # stream.name = 'LED GRADUAL'
+    # STREAMS.append(stream)
 
-    """ABRUPT LED"""
-    stream = ConceptDriftStream(LEDGeneratorDrift(has_noise=False, noise_percentage=0.0, n_drift_features=3),
-                                drift_stream=LEDGeneratorDrift(
-                                    has_noise=False, noise_percentage=0.0, n_drift_features=7),
-                                alpha=90.0, position=N_SAMPLES / 2)
-    stream.name = 'LED ABRUPBT'
-    STREAMS.append(stream)
+    # """ABRUPT LED"""
+    # stream = ConceptDriftStream(LEDGeneratorDrift(has_noise=False, noise_percentage=0.0, n_drift_features=3),
+    #                             drift_stream=LEDGeneratorDrift(
+    #                                 has_noise=False, noise_percentage=0.0, n_drift_features=7),
+    #                             alpha=90.0, position=N_SAMPLES / 2)
+    # stream.name = 'LED ABRUPBT'
+    # STREAMS.append(stream)
 
     """MIXED"""
-#    stream = ConceptDriftStream(MIXEDGenerator(classification_function=0),
-#                        MIXEDGenerator(classification_function=1),
-#                        position=N_SAMPLES/2,
-#                        alpha=90.0)
+    stream = ConceptDriftStream(MIXEDGenerator(classification_function=0),
+                        MIXEDGenerator(classification_function=1),
+                        position=N_SAMPLES/2,
+                        alpha=90.0)
     
-#    streams.append(stream)
-#
+    STREAMS.append(stream)
+
     """Sine"""
-#    stream = ConceptDriftStream(SineGenerator(classification_function=0),
-#                        SineGenerator(classification_function=1),
-#                        position=N_SAMPLES/2,
-#                        alpha=90.0)
-#    streams.append(stream)
+    stream = ConceptDriftStream(SineGenerator(classification_function=0),
+                        SineGenerator(classification_function=1),
+                        position=N_SAMPLES/2,
+                        alpha=90.0)
+    STREAMS.append(stream)
 
     """Evaluate on ARSLVQ, SAM and HAT"""
+    # TODO NB and ARSLVQ working
     for stream in STREAMS:
         print('{}:\n'.format(stream.name))
         f = open('result.txt', 'a+')
         f.write('{}:\n'.format(stream.name))
         f.close()
         
+        # oza = OzaBagging()
+        # high_dim_test(copy.copy(stream), copy.copy(oza), N_SAMPLES)
+        # low_dim_test(copy.copy(stream), copy.copy(oza), N_SAMPLES)
+        
+        
+        # samknn = SAMKNN()
+        # high_dim_test(copy.copy(stream), copy.copy(samknn), N_SAMPLES)
+        # low_dim_test(copy.copy(stream), copy.copy(samknn), N_SAMPLES)
+            
         nb = NaiveBayes()
-        # high_dim_test(copy.copy(stream), copy.copy(nb), N_SAMPLES)
+        high_dim_test(copy.copy(stream), copy.copy(nb), N_SAMPLES)
         low_dim_test(copy.copy(stream), copy.copy(nb), N_SAMPLES)
             
         # arf = ARF()
         # high_dim_test(copy.copy(stream), copy.copy(arf), N_SAMPLES)
         # low_dim_test(copy.copy(stream), copy.copy(arf), N_SAMPLES)
 
-        # arslvq = ARSLVQ(gradient_descent='Adadelta')
-        # high_dim_test(copy.copy(stream), copy.copy(arslvq), N_SAMPLES)
-        # low_dim_test(copy.copy(stream), copy.copy(arslvq), N_SAMPLES)
+        arslvq = ARSLVQ(gradient_descent='Adadelta')
+        high_dim_test(copy.copy(stream), copy.copy(arslvq), N_SAMPLES)
+        low_dim_test(copy.copy(stream), copy.copy(arslvq), N_SAMPLES)
 
-        # hat = HAT()
-        # high_dim_test(copy.copy(stream), copy.copy(hat), N_SAMPLES)
-        # low_dim_test(copy.copy(stream), copy.copy(hat), N_SAMPLES)
+        # hat_h = HAT()
+        # hat_l = HAT()
+        # high_dim_test(copy.copy(stream), copy.copy(hat_h), N_SAMPLES)
+        # low_dim_test(copy.copy(stream), copy.copy(hat_l), N_SAMPLES)
         

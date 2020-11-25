@@ -7,14 +7,14 @@ Created on Thu Dec 19 11:03:57 2019
 """
 
 import numpy as np
-from skmultiflow.trees import HoeffdingTree as HT
-from skmultiflow.lazy import SAMKNN
+# from skmultiflow.trees import HoeffdingTree as HT
+from skmultiflow.lazy import SAMKNNClassifier as SAMKNN
 from sklearn.metrics import accuracy_score
 import time, copy
 from sklearn.random_projection import SparseRandomProjection
 from sklearn.metrics import cohen_kappa_score
 from skmultiflow.bayes import NaiveBayes
-from rslvq import RSLVQ
+from bix.classifiers.adaptive_rslvq import ARSLVQ as RSLVQ
 transformer = SparseRandomProjection(n_components=1000)
 classes = np.arange(0, 15, 1)
 
@@ -39,7 +39,7 @@ data = np.load('skip-gram-embed-w-label.npy')
 # HIGH-DIM
 X, y = data[:, :-1], data[:, -1]
 
-clfs = [NaiveBayes(),RSLVQ(prototypes_per_class=2,gradient_descent="Adadelta")]#HT()
+clfs = [RSLVQ(prototypes_per_class=2,gradient_descent="Adadelta"), SAMKNN()]
 
 # for clf in clfs:
 #     acc_fold = []
@@ -88,7 +88,7 @@ clfs = [NaiveBayes(),RSLVQ(prototypes_per_class=2,gradient_descent="Adadelta")]#
 print("starting..")
 X, y = data[:, :-1], data[:, -1]
 batch_size = 60
-clfs = [NaiveBayes(),RSLVQ(prototypes_per_class=2,gradient_descent="Adadelta")]##HT()
+clfs = [RSLVQ(prototypes_per_class=2,gradient_descent="Adadelta"), SAMKNN()]##HT()
 for clf in clfs:
     acc_fold = []
     kappa_fold = []
@@ -107,7 +107,7 @@ for clf in clfs:
         # Learn RP
         transformer.partial_fit(x) #nComponents must be smaller than or equal to nSample
         x = transformer.transform(x)
-        _clf.partial_fit(x, y,classes=np.array(classes))
+        _clf.partial_fit(x, y,classes=classes)
         
         for i in range(data.shape[0]-batch_size):
             x = data[i:i+batch_size, :-1]
@@ -118,7 +118,7 @@ for clf in clfs:
         
             y_true.extend(y[0])
             # update clf
-            _clf.partial_fit(x, y[0])
+            _clf.partial_fit(x, y[0].tolist())
         
         print('low fold skipgram done')
         

@@ -1,162 +1,222 @@
 SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-Evaluated AdaptiveRandomForestClassifier(binary_split=False, disable_weighted_vote=False,
-                               drift_detection_method=ADWIN(delta=0.001),
-                               grace_period=50, lambda_value=6,
-                               leaf_prediction='nba', max_byte_size=33554432,
-                               max_features=22, memory_estimate_period=2000000,
-                               n_estimators=10, nb_threshold=0,
-                               no_preprune=False, nominal_attributes=None,
-                               performance_metric='acc', random_state=None,
-                               remove_poor_atts=False, split_confidence=0.01,
-                               split_criterion='info_gain',
-                               stop_mem_management=False, tie_threshold=0.05,
-                               warning_detection_method=ADWIN(delta=0.01)) high dim
-Time: 948.2471935272217+-80.82845219014597
-Acc: 0.7460629212584251+-0.01443172432190158
-Kappa: 0.0+-0.0
-
-SEA GRADUAL:
-Evaluated AdaptiveRandomForestClassifier(binary_split=False, disable_weighted_vote=False,
-                               drift_detection_method=ADWIN(delta=0.001),
-                               grace_period=50, lambda_value=6,
-                               leaf_prediction='nba', max_byte_size=33554432,
-                               max_features=22, memory_estimate_period=2000000,
-                               n_estimators=10, nb_threshold=0,
-                               no_preprune=False, nominal_attributes=None,
-                               performance_metric='acc', random_state=None,
-                               remove_poor_atts=False, split_confidence=0.01,
-                               split_criterion='info_gain',
-                               stop_mem_management=False, tie_threshold=0.05,
-                               warning_detection_method=ADWIN(delta=0.01)) high dim
-Time: 7274.054046201706+-12921.058322502384
-Acc: 0.7476749534990701+-0.01416366704982605
-Kappa: 0.0+-0.0
-
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-Evaluated ARSLVQ(batch_size=1, decay_rate=0.9, gradient_descent='Adadelta',
-       initial_prototypes=None, learning_rate=0.001, prototypes_per_class=1,
-       random_state=None, sigma=1.0) high dim
-Time: 50.49013948440552+-6.670869122510321
-Acc: 0.30976219524390486+-0.010929946134410468
-Kappa: -0.006415702059552908+-0.003306934648678952
-
-SEA GRADUAL:
-Evaluated ARSLVQ(batch_size=1, decay_rate=0.9, gradient_descent='Adadelta',
-       initial_prototypes=None, learning_rate=0.001, prototypes_per_class=1,
-       random_state=None, sigma=1.0) high dim
-Time: 43.22861642837525+-1.7595494946562098
-Acc: 0.31639432788655775+-0.011543094284797705
-Kappa: -0.0028511443401789682+-0.002803585436032495
-
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
 Evaluated NaiveBayes(nominal_attributes=None) high dim
-Time: 232.62866282463074+-1.432574086122865
-Acc: 0.9466229324586491+-0.004907486864726142
-Kappa: 0.8651178870988261+-0.009649771879898099
+Time: 284.1849540710449+-12.784465161416502
+Acc: 0.9538950779015579+-0.00417621379044328
+Kappa: 0.8824028977265718+-0.0075576060579536
 
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
-SEA GRADUAL:
 Evaluated NaiveBayes(nominal_attributes=None) low dim
-Time: 26.259367656707763+-0.05967023087460099
-Acc: 0.7290840000000001+-0.0134037093373439
-Kappa: 0.07012939668016709+-0.002658383657422976
+Time: 32.16944036483765+-2.024355945671019
+Acc: 0.598376+-0.09624016824590448
+Kappa: 0.06474651353491157+-0.024013726369228446
+
+Evaluated ARSLVQ(batch_size=1, decay_rate=0.9, gradient_descent='Adadelta',
+       initial_prototypes=None, learning_rate=0.001, prototypes_per_class=1,
+       random_state=None, sigma=1.0) high dim
+Time: 49.581128406524655+-3.441708515652657
+Acc: 0.9904958099161985+-0.008738553568079425
+Kappa: 0.9755693903614221+-0.021170271833211914
+
+Evaluated ARSLVQ(batch_size=1, decay_rate=0.9, gradient_descent='Adadelta',
+       initial_prototypes=None, learning_rate=0.001, prototypes_per_class=1,
+       random_state=None, sigma=1.0) low dim
+Time: 30.252753162384032+-0.8223599395314466
+Acc: 0.722548+-0.041363008788046385
+Kappa: 0.03494932650731373+-0.011533697582246259
 
 SEA ABRUPBT:
-Evaluated NaiveBayes(nominal_attributes=None) low dim
-Time: 26.17659683227539+-0.19021674479734238
-Acc: 0.5947479999999999+-0.009362611601471048
-Kappa: 0.0018049341918120686+-0.0025194981801769747
+Evaluated NaiveBayes(nominal_attributes=None) high dim
+Time: 304.0220380306244+-20.057759871841533
+Acc: 0.9657393147862956+-0.0074108323955884795
+Kappa: 0.9274746584325007+-0.017412081847931266
 
-LED GRADUAL:
 Evaluated NaiveBayes(nominal_attributes=None) low dim
-Time: 89.53574333190917+-2.582493011485957
-Acc: 0.16665999999999997+-0.04293439833047623
-Kappa: 0.07332991125491659+-0.0475353513569999
+Time: 29.925914907455443+-1.864535854430442
+Acc: 0.5491360000000001+-0.035078461539811
+Kappa: 0.013176363830337046+-0.00520958988430874
 
-LED ABRUPBT:
+Evaluated ARSLVQ(batch_size=1, decay_rate=0.9, gradient_descent='Adadelta',
+       initial_prototypes=None, learning_rate=0.001, prototypes_per_class=1,
+       random_state=None, sigma=1.0) high dim
+Time: 47.0050705909729+-1.4621056831674242
+Acc: 0.9897557951159023+-0.006575350438725042
+Kappa: 0.9783264568004917+-0.014463224194064523
+
+Evaluated ARSLVQ(batch_size=1, decay_rate=0.9, gradient_descent='Adadelta',
+       initial_prototypes=None, learning_rate=0.001, prototypes_per_class=1,
+       random_state=None, sigma=1.0) low dim
+Time: 32.96549096107483+-2.6830932586349947
+Acc: 0.553336+-0.003961199818236907
+Kappa: -0.01394061811562226+-0.006793608481274677
+
+DriftingMixed Generator:
+Evaluated NaiveBayes(nominal_attributes=None) high dim
+Time: 346.8832636356354+-22.40944071335058
+Acc: 0.8267085341706834+-0.15786195723458366
+Kappa: 0.6534794154278974+-0.31576391530135034
+
+Evaluated NaiveBayes(nominal_attributes=None) low dim
+Time: 32.718538188934325+-2.2308212063771693
+Acc: 0.525332+-0.012688127363799592
+Kappa: 0.00902753102622047+-0.014700361248694277
+
+Evaluated ARSLVQ(batch_size=1, decay_rate=0.9, gradient_descent='Adadelta',
+       initial_prototypes=None, learning_rate=0.001, prototypes_per_class=1,
+       random_state=None, sigma=1.0) high dim
+Time: 55.744443607330325+-4.742628836617386
+Acc: 0.9133302666053321+-0.008948927270904522
+Kappa: 0.8261730916661791+-0.01766212602844938
+
+Evaluated ARSLVQ(batch_size=1, decay_rate=0.9, gradient_descent='Adadelta',
+       initial_prototypes=None, learning_rate=0.001, prototypes_per_class=1,
+       random_state=None, sigma=1.0) low dim
+Time: 34.788783359527585+-1.0807716867482682
+Acc: 0.462728+-0.005493539478332697
+Kappa: -0.0897297629280474+-0.01749956429405108
+
+DriftingSine Generator:
+Evaluated NaiveBayes(nominal_attributes=None) high dim
+Time: 316.9813156604767+-11.879640538435444
+Acc: 0.8058201164023281+-0.13872156300728544
+Kappa: 0.6134392784796917+-0.2782307247390084
+
+Evaluated NaiveBayes(nominal_attributes=None) low dim
+Time: 36.50145387649536+-4.007655516599009
+Acc: 0.553504+-0.055182323836533015
+Kappa: 0.08223596452507105+-0.11713304826054996
+
+Evaluated ARSLVQ(batch_size=1, decay_rate=0.9, gradient_descent='Adadelta',
+       initial_prototypes=None, learning_rate=0.001, prototypes_per_class=1,
+       random_state=None, sigma=1.0) high dim
+Time: 62.831153869628906+-5.6615873907477425
+Acc: 0.9818596371927439+-0.013717854318581033
+Kappa: 0.9636165516495876+-0.02738720317265273
+
+Evaluated ARSLVQ(batch_size=1, decay_rate=0.9, gradient_descent='Adadelta',
+       initial_prototypes=None, learning_rate=0.001, prototypes_per_class=1,
+       random_state=None, sigma=1.0) low dim
+Time: 36.75248231887817+-4.321751994599065
+Acc: 0.48827600000000004+-0.0041124668995628525
+Kappa: -0.05144533763315775+-0.013793564347182572
+
+SEA GRADUAL:
+Evaluated NaiveBayes(nominal_attributes=None) high dim
+Time: 227.4729796409607+-6.393731829288979
+Acc: 0.9546030920618411+-0.0031168401601329486
+Kappa: 0.8840012877714385+-0.006119282136776068
+
+Evaluated NaiveBayes(nominal_attributes=None) low dim
+Time: 25.6232280254364+-0.2881683811731625
+Acc: 0.5477839999999999+-0.07756400340364081
+Kappa: 0.021123459883556416+-0.011165014455368646
+
+Evaluated ARSLVQ(batch_size=1, decay_rate=0.9, gradient_descent='Adadelta',
+       initial_prototypes=None, learning_rate=0.001, prototypes_per_class=1,
+       random_state=None, sigma=1.0) high dim
+Time: 52.17134346961975+-19.593650648901253
+Acc: 0.9912558251165023+-0.00738405883990562
+Kappa: 0.9774760790416961+-0.017760646433649815
+
+Evaluated ARSLVQ(batch_size=1, decay_rate=0.9, gradient_descent='Adadelta',
+       initial_prototypes=None, learning_rate=0.001, prototypes_per_class=1,
+       random_state=None, sigma=1.0) low dim
+Time: 26.770305395126343+-2.686540548042176
+Acc: 0.722308+-0.0376331802536007
+Kappa: 0.014016619851890866+-0.008392542855008355
+
+SEA ABRUPBT:
+Evaluated NaiveBayes(nominal_attributes=None) high dim
+Time: 265.33115139007566+-17.28497484248765
+Acc: 0.95237504750095+-0.0054701646132512705
+Kappa: 0.898679199793715+-0.013763540421490233
+
+Evaluated NaiveBayes(nominal_attributes=None) low dim
+Time: 28.32348427772522+-0.4442644505884318
+Acc: 0.570212+-0.03522927101147564
+Kappa: 0.0015352447261257618+-0.0017433089034100137
+
+Evaluated ARSLVQ(batch_size=1, decay_rate=0.9, gradient_descent='Adadelta',
+       initial_prototypes=None, learning_rate=0.001, prototypes_per_class=1,
+       random_state=None, sigma=1.0) high dim
+Time: 45.89630560874939+-3.585570471211744
+Acc: 0.9923838476769535+-0.005574544556235089
+Kappa: 0.9838329753225716+-0.01228474355935582
+
+Evaluated ARSLVQ(batch_size=1, decay_rate=0.9, gradient_descent='Adadelta',
+       initial_prototypes=None, learning_rate=0.001, prototypes_per_class=1,
+       random_state=None, sigma=1.0) low dim
+Time: 28.252587699890135+-1.4976203249424627
+Acc: 0.705256+-0.012973865422456028
+Kappa: 0.3929492173551113+-0.03953758045111818
+
+DriftingMixed Generator:
+Evaluated NaiveBayes(nominal_attributes=None) high dim
+Time: 256.9412606716156+-3.2642323781168994
+Acc: 0.819532390647813+-0.1552007701834231
+Kappa: 0.6394853640139058+-0.310612259434228
+
+Evaluated NaiveBayes(nominal_attributes=None) low dim
+Time: 30.99269042015076+-1.9095854890724606
+Acc: 0.5308919999999999+-0.01436376886475134
+Kappa: 0.012163807671114624+-0.013338414559829028
+
+Evaluated ARSLVQ(batch_size=1, decay_rate=0.9, gradient_descent='Adadelta',
+       initial_prototypes=None, learning_rate=0.001, prototypes_per_class=1,
+       random_state=None, sigma=1.0) high dim
+Time: 47.88595728874206+-4.763587280925753
+Acc: 0.912930258605172+-0.00901284334831777
+Kappa: 0.8253071485107266+-0.017781823403620018
+
+Evaluated ARSLVQ(batch_size=1, decay_rate=0.9, gradient_descent='Adadelta',
+       initial_prototypes=None, learning_rate=0.001, prototypes_per_class=1,
+       random_state=None, sigma=1.0) low dim
+Time: 29.24552125930786+-1.5030863968649328
+Acc: 0.697912+-0.04258495433835758
+Kappa: 0.39912823174552237+-0.08683596143488066
+
+DriftingSine Generator:
+Evaluated NaiveBayes(nominal_attributes=None) high dim
+Time: 279.48210554122926+-18.353892309958777
+Acc: 0.8110842216844338+-0.14014387100521772
+Kappa: 0.6246345874066423+-0.28065203016238
+
+Evaluated NaiveBayes(nominal_attributes=None) low dim
+Time: 30.504793453216553+-2.097825622030155
+Acc: 0.536008+-0.050185072840437335
+Kappa: 0.05190467715649474+-0.08866842772672374
+
+Evaluated ARSLVQ(batch_size=1, decay_rate=0.9, gradient_descent='Adadelta',
+       initial_prototypes=None, learning_rate=0.001, prototypes_per_class=1,
+       random_state=None, sigma=1.0) high dim
+Time: 57.34307932853699+-8.944375998356309
+Acc: 0.9822516450329006+-0.012467053903595284
+Kappa: 0.9643765345292529+-0.024876138467392166
+
+Evaluated ARSLVQ(batch_size=1, decay_rate=0.9, gradient_descent='Adadelta',
+       initial_prototypes=None, learning_rate=0.001, prototypes_per_class=1,
+       random_state=None, sigma=1.0) low dim
+Time: 29.850500059127807+-1.3783513516355435
+Acc: 0.7637479999999999+-0.06414279395224376
+Kappa: 0.5206134063789801+-0.12483160249618486
+
+Evaluated ARSLVQ(batch_size=1, decay_rate=0.9, gradient_descent='Adadelta',
+       initial_prototypes=None, learning_rate=0.001, prototypes_per_class=2,
+       random_state=None, sigma=1.0) low dim
+Time: 466.8116042613983+-22.104803178455366
+Acc: 0.9824848484848484+-0.00023171246510552763
+Kappa: 0.4892056551837566+-0.006709666589937034
+
+Evaluated SAMKNNClassifier(ltm_size=0.4, max_window_size=None, min_stm_size=50,
+                 n_neighbors=5, stm_size_option='maxACCApprox', use_ltm=True,
+                 weighting='distance') low dim
+Time: 19.724593067169188+-0.18756474125788
+Acc: 0.9821212121212122+-0.0
+Kappa: 0.0+-0.0
+
+SEA GRADUAL:
+Evaluated ARSLVQ(batch_size=1, decay_rate=0.9, gradient_descent='Adadelta',
+       initial_prototypes=None, learning_rate=0.001, prototypes_per_class=2,
+       random_state=None, sigma=1.0) low dim
+Time: 601.9000283718109+-11.890295128330676
+Acc: 0.984114478114478+-0.00016273462590697598
+Kappa: 0.541847747084599+-0.0067744211485159635
+

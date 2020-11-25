@@ -69,7 +69,7 @@ class Base:
     def conv(self, X, index = None):
         W  = self.W if index is None else self.W[index]
         ts = X @ W
-        return np.bmat([np.cos(ts), np.sin(ts)])
+        return np.block([np.cos(ts), np.sin(ts)])
 
     ### Set the appropriate random matrix to 'self.W' if 'self.W' is None (i.e. empty).
     ### NOTE: This function can manipulate multiple random matrix. If argument 'dim_in'
