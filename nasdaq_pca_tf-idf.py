@@ -15,6 +15,7 @@ from sklearn.random_projection import SparseRandomProjection
 from sklearn.metrics import cohen_kappa_score
 from arslvq import RobustSoftLearningVectorQuantization as RSLVQ
 from skmultiflow.meta import AdaptiveRandomForest as ARF
+import pandas as pd
 
 transformer = SparseRandomProjection(n_components=1000)
 classes = np.arange(0, 15, 1)
@@ -26,8 +27,9 @@ res_file = 'res_tf_idf.txt'
 f = open(res_file, 'a+')
 f.write('TF-IDF\n')
 f.close()
-# data = np.load('skip-gram-embed-w-label.npy')
-data = np.loadtxt('nasdaq_stream_wo_sentiment.csv', delimiter=',', skiprows=1)
+data = pd.read_csv('nasdaq_stream_wo_sentiment.csv')
+data = data.to_numpy()
+
 # labels = []
 # while 1:
 #    line = f.readline()
