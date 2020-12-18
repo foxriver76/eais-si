@@ -1,7 +1,16 @@
 ### EAIS 2020 Special Issue
 
+## How To execute the Experiments
+You need the python >= 3.6, the latest version of skmultiflow installed as well as the Incremental PCA, which you can find below.
 
+# Experiments on Synthetic Streams
+- execute `python pca_streams.py` inside the `experiments` folder to reproduce the PCA experiments
+- execute `python rp_streams.py` inside the `experiments` folder to reproduce the Random Projection experiments
 
+# Experiments on the NSDQ Dataset
+- execute `python pca_nasdaq_skipgram.py` inside the `experiments` folder to reproduce the PCA experiments via Skipgram embedding
+- execute `python pca_nasdaq_tf-idf.py` inside the `experiments` folder to reproduce the PCA experiments via tf-idf encoding
+- execute `python rp_nasdaq.py` inside the `experiments` folder to reproduce the Random Projection experiments for Skipgram as well as tf-idf
 
 Requirements for Incremental PCA
 -----
