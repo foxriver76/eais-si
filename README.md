@@ -1,8 +1,9 @@
+### EAIS 2020 Special Issue
 
 
 
 
-Requirements
+Requirements for Incremental PCA
 -----
 * C++11 compiler, Python3, Eigen3, Pybind11, Numpy
 
@@ -10,7 +11,7 @@ Requirements
 
 ******
 
-Setup
+Setup for Incremental PCA
 -----
 #### Mac OS with Homebrew
 * Install libraries
@@ -61,6 +62,8 @@ Setup
 ******
 
 
+
+******
 
 Special Thanks goes to Fujiwara et al. for providing the Incremenatal Streaming PCA 
 For more information see:
