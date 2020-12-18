@@ -1,7 +1,7 @@
 # EAIS 2020 Special Issue
 
 ## How To execute the Experiments
-You need the python >= 3.6, the latest version of skmultiflow installed as well as the Incremental PCA, which you can find below.
+You need Python >= 3.6, the latest version of [skmultiflow](https://github.com/scikit-multiflow/scikit-multiflow) installed as well as the Incremental PCA, which you can find below.
 
 ### Experiments on Synthetic Streams
 - execute `python pca_streams.py` inside the `experiments` folder to reproduce the PCA experiments
