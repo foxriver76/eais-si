@@ -1,0 +1,226 @@
+--------------------------------------------------
+High dim test Nasdaq TFIDF: 
+AdaptiveRandomForestClassifier(binary_split=False, disable_weighted_vote=False,
+                               drift_detection_method=ADWIN(delta=0.001),
+                               grace_period=50, lambda_value=6,
+                               leaf_prediction='nba', max_byte_size=33554432,
+                               max_features=59, memory_estimate_period=2000000,
+                               n_estimators=10, nb_threshold=0,
+                               no_preprune=False, nominal_attributes=None,
+                               performance_metric='acc', random_state=None,
+                               remove_poor_atts=False, split_confidence=0.01,
+                               split_criterion='info_gain',
+                               stop_mem_management=False, tie_threshold=0.05,
+                               warning_detection_method=ADWIN(delta=0.01))
+Acc: 0.3000429368827823 +- 0.0016196165006551375
+Kappa: 0.02135794057710978 +- 0.0025805058174926607
+Time: 5653.407953691482 +- 411.7816165977459
+--------------------------------------------------
+
+--------------------------------------------------
+High dim test Nasdaq TFIDF: 
+AdaptiveRandomForestClassifier(binary_split=False, disable_weighted_vote=False,
+                               drift_detection_method=ADWIN(delta=0.001),
+                               grace_period=50, lambda_value=6,
+                               leaf_prediction='nba', max_byte_size=33554432,
+                               max_features=59, memory_estimate_period=2000000,
+                               n_estimators=10, nb_threshold=0,
+                               no_preprune=False, nominal_attributes=None,
+                               performance_metric='acc', random_state=None,
+                               remove_poor_atts=False, split_confidence=0.01,
+                               split_criterion='info_gain',
+                               stop_mem_management=False, tie_threshold=0.05,
+                               warning_detection_method=ADWIN(delta=0.01))
+Acc: 0.2988869438847971 +- 0.001503803184529386
+Kappa: 0.020851274598652502 +- 0.0022529027743823705
+Time: 5773.115063333511 +- 403.2540215373658
+--------------------------------------------------
+
+--------------------------------------------------
+High dim test Nasdaq TFIDF: 
+SAMKNNClassifier(ltm_size=0.4, max_window_size=None, min_stm_size=50,
+                 n_neighbors=5, stm_size_option='maxACCApprox', use_ltm=True,
+                 weighting='distance')
+Acc: 0.3740264887538396 +- 0.001462914524203634
+Kappa: 0.19242469745771545 +- 0.0028192654150964325
+Time: 2625.308802652359 +- 63.88166231408851
+--------------------------------------------------
+
+--------------------------------------------------
+Nasdaq TFIDF Low dim test: 
+AdaptiveRandomForestClassifier(binary_split=False, disable_weighted_vote=False,
+                               drift_detection_method=ADWIN(delta=0.001),
+                               grace_period=50, lambda_value=6,
+                               leaf_prediction='nba', max_byte_size=33554432,
+                               max_features=32, memory_estimate_period=2000000,
+                               n_estimators=10, nb_threshold=0,
+                               no_preprune=False, nominal_attributes=None,
+                               performance_metric='acc', random_state=None,
+                               remove_poor_atts=False, split_confidence=0.01,
+                               split_criterion='info_gain',
+                               stop_mem_management=False, tie_threshold=0.05,
+                               warning_detection_method=ADWIN(delta=0.01))
+Acc: 0.296132377712455 +- 0.0
+Kappa: 0.02583343571974339 +- 0.0
+Time: 6192.581801891327 +- 0.0
+--------------------------------------------------
+
+--------------------------------------------------
+Nasdaq TFIDF Low dim test: 
+SAMKNNClassifier(ltm_size=0.4, max_window_size=None, min_stm_size=50,
+                 n_neighbors=5, stm_size_option='maxACCApprox', use_ltm=True,
+                 weighting='distance')
+Acc: 0.3642038511081019 +- 0.0
+Kappa: 0.16901182682103366 +- 0.0
+Time: 880.941864490509 +- 0.0
+--------------------------------------------------
+
+SKIP-GRAM
+--------------------------------------------------
+High dim test skip-gram: 
+AdaptiveRandomForestClassifier(binary_split=False, disable_weighted_vote=False,
+                               drift_detection_method=ADWIN(delta=0.001),
+                               grace_period=50, lambda_value=6,
+                               leaf_prediction='nba', max_byte_size=33554432,
+                               max_features=32, memory_estimate_period=2000000,
+                               n_estimators=10, nb_threshold=0,
+                               no_preprune=False, nominal_attributes=None,
+                               performance_metric='acc', random_state=None,
+                               remove_poor_atts=False, split_confidence=0.01,
+                               split_criterion='info_gain',
+                               stop_mem_management=False, tie_threshold=0.05,
+                               warning_detection_method=ADWIN(delta=0.01))
+Acc: 0.32985666160248367 +- 0.0038093270779174185
+Kappa: 0.08455751302263095 +- 0.00593331682360504
+Time: 6809.457146215439 +- 193.77419549840548
+--------------------------------------------------
+
+--------------------------------------------------
+High dim test skip-gram: 
+SAMKNNClassifier(ltm_size=0.4, max_window_size=None, min_stm_size=50,
+                 n_neighbors=5, stm_size_option='maxACCApprox', use_ltm=True,
+                 weighting='distance')
+Acc: 0.487581742519321 +- 5.551115123125783e-17
+Kappa: 0.3624232001404809 +- 0.0
+Time: 905.987738418579 +- 7.8939539383240005
+--------------------------------------------------
+
+SKIP-GRAM
+--------------------------------------------------
+Low dim test skip-gram: 
+AdaptiveRandomForestClassifier(binary_split=False, disable_weighted_vote=False,
+                               drift_detection_method=ADWIN(delta=0.001),
+                               grace_period=50, lambda_value=6,
+                               leaf_prediction='nba', max_byte_size=33554432,
+                               max_features=32, memory_estimate_period=2000000,
+                               n_estimators=10, nb_threshold=0,
+                               no_preprune=False, nominal_attributes=None,
+                               performance_metric='acc', random_state=None,
+                               remove_poor_atts=False, split_confidence=0.01,
+                               split_criterion='info_gain',
+                               stop_mem_management=False, tie_threshold=0.05,
+                               warning_detection_method=ADWIN(delta=0.01))
+Acc: 0.34035933681220687 +- 0.006205811071774046
+Kappa: 0.10375180659261282 +- 0.00960220762827004
+Time: 6915.3085747718815 +- 176.98448768449603
+--------------------------------------------------
+
+--------------------------------------------------
+Low dim test skip-gram: 
+SAMKNNClassifier(ltm_size=0.4, max_window_size=None, min_stm_size=50,
+                 n_neighbors=5, stm_size_option='maxACCApprox', use_ltm=True,
+                 weighting='distance')
+Acc: 0.4661866701895766 +- 0.004551317440611656
+Kappa: 0.3348585313601514 +- 0.005754277059962573
+Time: 785.4825857639313 +- 36.503234479642096
+--------------------------------------------------
+
+
+
+--------------------------------------------------
+High dim test Nasdaq TFIDF: 
+ReactiveRobustSoftLearningVectorQuantization(confidence=1e-10, gamma=None,
+                                             prototypes_per_class=2)
+Acc: 0.2021072100934703 +- 0.00011890213693562803
+Kappa: -0.01012984925311291 +- 9.184898651710681e-05
+Time: 20054.339901542662 +- 1003.9978118910121
+--------------------------------------------------
+
+--------------------------------------------------
+High dim test Nasdaq TFIDF: 
+ReactiveRobustSoftLearningVectorQuantization(confidence=1e-10, gamma=None,
+                                             prototypes_per_class=2)
+Acc: 0.2027721813037399 +- 0.0008563347968261984
+Kappa: -0.00974465771573659 +- 0.0006096901374802938
+Time: 23655.28819688161 +- 368.1818821976644
+--------------------------------------------------
+
+--------------------------------------------------
+High dim test Nasdaq TFIDF: 
+ReactiveRobustSoftLearningVectorQuantization(confidence=1e-10, gamma=None,
+                                             prototypes_per_class=2)
+Acc: 0.2027721813037399 +- 0.0008563347968261984
+Kappa: -0.00974465771573659 +- 0.0006096901374802938
+Time: 23348.048720995586 +- 1009.0024930855534
+--------------------------------------------------
+
+--------------------------------------------------
+High dim test Nasdaq TFIDF: 
+RSLVQ(gradient_descent='Adadelta', prototypes_per_class=2)
+Acc: 0.19363433189109447 +- 0.0007752096417427526
+Kappa: -0.009150141455032642 +- 0.0007342280348124478
+Time: 405.118980328242 +- 8.688469901033404
+--------------------------------------------------
+
+--------------------------------------------------
+Nasdaq TFIDF Low dim test: 
+ReactiveRobustSoftLearningVectorQuantization(confidence=1e-10, gamma=None,
+                                             prototypes_per_class=2)
+Acc: 0.18414417985049158 +- 1.5569723578658155e-05
+Kappa: 1.6327087120182604e-05 +- 2.3089988039409317e-05
+Time: 11094.295874436697 +- 210.35203207630332
+--------------------------------------------------
+
+--------------------------------------------------
+Nasdaq TFIDF Low dim test: 
+RSLVQ(gradient_descent='Adadelta', prototypes_per_class=2)
+Acc: 0.18416619876473891 +- 0.0
+Kappa: 0.0 +- 0.0
+Time: 362.2995714346568 +- 0.4402962923188479
+--------------------------------------------------
+
+SKIP-GRAM
+--------------------------------------------------
+High dim test skip-gram: 
+ReactiveRobustSoftLearningVectorQuantization(confidence=1e-10, gamma=None,
+                                             prototypes_per_class=2)
+Acc: 0.21713235132219214 +- 0.046653137774777635
+Kappa: 0.025112685056766042 +- 0.03547480488034295
+Time: 23434.821581919987 +- 190.04163009969434
+--------------------------------------------------
+
+--------------------------------------------------
+High dim test skip-gram: 
+RSLVQ(gradient_descent='Adadelta', prototypes_per_class=2)
+Acc: 0.2256093533258471 +- 0.008711066548656027
+Kappa: 0.06302640587204537 +- 0.009721245504510402
+Time: 317.82480001449585 +- 1.1032223541588253
+--------------------------------------------------
+
+--------------------------------------------------
+Low dim test skip-gram: 
+ReactiveRobustSoftLearningVectorQuantization(confidence=1e-10, gamma=None,
+                                             prototypes_per_class=2)
+Acc: 0.22686438998612854 +- 0.060416318398993696
+Kappa: 0.03626525918163966 +- 0.05128682137765021
+Time: 23153.448627312977 +- 167.49643191644446
+--------------------------------------------------
+
+--------------------------------------------------
+Low dim test skip-gram: 
+RSLVQ(gradient_descent='Adadelta', prototypes_per_class=2)
+Acc: 0.21162780456657201 +- 0.01944616685675514
+Kappa: 0.04426994930451874 +- 0.031323779713599606
+Time: 330.81979664166766 +- 1.6922495098576962
+--------------------------------------------------
+

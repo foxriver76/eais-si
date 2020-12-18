@@ -1,0 +1,316 @@
+SEA GRADUAL:
+SEA GRADUAL:
+Evaluated SAMKNNClassifier(ltm_size=0.4, max_window_size=None, min_stm_size=50,
+                 n_neighbors=5, stm_size_option=None, use_ltm=True,
+                 weighting='distance') high dim
+Time: 9759.723605553309+-5083.215932205412
+Acc: 0.2568918045027567+-0.014018985344463407
+Kappa: 0.0+-0.0
+
+Evaluated SAMKNNClassifier(ltm_size=0.4, max_window_size=None, min_stm_size=50,
+                 n_neighbors=5, stm_size_option=None, use_ltm=True,
+                 weighting='distance') low dim
+Time: 798.2498897711436+-513.0105111239451
+Acc: 0.25819333333333333+-0.01795182689558054
+Kappa: 0.0+-0.0
+
+Evaluated AdaptiveRandomForestClassifier(binary_split=False, disable_weighted_vote=False,
+                               drift_detection_method=ADWIN(delta=0.001),
+                               grace_period=50, lambda_value=6,
+                               leaf_prediction='nba', max_byte_size=33554432,
+                               max_features=22, memory_estimate_period=2000000,
+                               n_estimators=10, nb_threshold=0,
+                               no_preprune=False, nominal_attributes=None,
+                               performance_metric='acc', random_state=None,
+                               remove_poor_atts=False, split_confidence=0.01,
+                               split_criterion='info_gain',
+                               stop_mem_management=False, tie_threshold=0.05,
+                               warning_detection_method=ADWIN(delta=0.01)) high dim
+Time: 963.0582069555918+-96.59404939781233
+Acc: 0.9924531823969813+-0.005105820043936215
+Kappa: 0.980759710637586+-0.01222082830877233
+
+SEA GRADUAL:
+Evaluated SAMKNNClassifier(ltm_size=0.4, max_window_size=None, min_stm_size=50,
+                 n_neighbors=5, stm_size_option=None, use_ltm=True,
+                 weighting='distance') high dim
+Time: 9536.845230182013+-5117.9625454563575
+Acc: 0.2578984913031594+-0.016918158028301288
+Kappa: 0.0+-0.0
+
+Evaluated SAMKNNClassifier(ltm_size=0.4, max_window_size=None, min_stm_size=50,
+                 n_neighbors=5, stm_size_option=None, use_ltm=True,
+                 weighting='distance') low dim
+Time: 793.0852355957031+-507.85058857609965
+Acc: 0.25721333333333335+-0.0162985670808476
+Kappa: 0.0+-0.0
+
+Evaluated AdaptiveRandomForestClassifier(binary_split=False, disable_weighted_vote=False,
+                               drift_detection_method=ADWIN(delta=0.001),
+                               grace_period=50, lambda_value=6,
+                               leaf_prediction='nba', max_byte_size=33554432,
+                               max_features=22, memory_estimate_period=2000000,
+                               n_estimators=10, nb_threshold=0,
+                               no_preprune=False, nominal_attributes=None,
+                               performance_metric='acc', random_state=None,
+                               remove_poor_atts=False, split_confidence=0.01,
+                               split_criterion='info_gain',
+                               stop_mem_management=False, tie_threshold=0.05,
+                               warning_detection_method=ADWIN(delta=0.01)) high dim
+Time: 973.6799174944559+-91.00980027541893
+Acc: 0.9927531883971011+-0.004995493343376929
+Kappa: 0.9815361333731235+-0.011889780456904843
+
+Evaluated AdaptiveRandomForestClassifier(binary_split=False, disable_weighted_vote=False,
+                               drift_detection_method=ADWIN(delta=0.001),
+                               grace_period=50, lambda_value=6,
+                               leaf_prediction='nba', max_byte_size=33554432,
+                               max_features=7, memory_estimate_period=2000000,
+                               n_estimators=10, nb_threshold=0,
+                               no_preprune=False, nominal_attributes=None,
+                               performance_metric='acc', random_state=None,
+                               remove_poor_atts=False, split_confidence=0.01,
+                               split_criterion='info_gain',
+                               stop_mem_management=False, tie_threshold=0.05,
+                               warning_detection_method=ADWIN(delta=0.01)) low dim
+Time: 658.2291629314423+-129.50975771158966
+Acc: 0.7345133333333332+-0.020430835083819286
+Kappa: 0.008333789110555453+-0.0010186026149809702
+
+SEA ABRUPBT:
+Evaluated SAMKNNClassifier(ltm_size=0.4, max_window_size=None, min_stm_size=50,
+                 n_neighbors=5, stm_size_option=None, use_ltm=True,
+                 weighting='distance') high dim
+Time: 9613.15818532308+-5098.052361281943
+Acc: 0.3906478129562591+-0.016880108532685865
+Kappa: 0.0+-0.0
+
+Evaluated SAMKNNClassifier(ltm_size=0.4, max_window_size=None, min_stm_size=50,
+                 n_neighbors=5, stm_size_option=None, use_ltm=True,
+                 weighting='distance') low dim
+Time: 792.252439657847+-515.0161476277555
+Acc: 0.39033999999999996+-0.021549651195939747
+Kappa: 0.0+-0.0
+
+Evaluated AdaptiveRandomForestClassifier(binary_split=False, disable_weighted_vote=False,
+                               drift_detection_method=ADWIN(delta=0.001),
+                               grace_period=50, lambda_value=6,
+                               leaf_prediction='nba', max_byte_size=33554432,
+                               max_features=22, memory_estimate_period=2000000,
+                               n_estimators=10, nb_threshold=0,
+                               no_preprune=False, nominal_attributes=None,
+                               performance_metric='acc', random_state=None,
+                               remove_poor_atts=False, split_confidence=0.01,
+                               split_criterion='info_gain',
+                               stop_mem_management=False, tie_threshold=0.05,
+                               warning_detection_method=ADWIN(delta=0.01)) high dim
+Time: 1094.4815148512523+-59.75958776215504
+Acc: 0.9903598071961439+-0.004614013244766414
+Kappa: 0.979522726769026+-0.010234182279856422
+
+Evaluated AdaptiveRandomForestClassifier(binary_split=False, disable_weighted_vote=False,
+                               drift_detection_method=ADWIN(delta=0.001),
+                               grace_period=50, lambda_value=6,
+                               leaf_prediction='nba', max_byte_size=33554432,
+                               max_features=7, memory_estimate_period=2000000,
+                               n_estimators=10, nb_threshold=0,
+                               no_preprune=False, nominal_attributes=None,
+                               performance_metric='acc', random_state=None,
+                               remove_poor_atts=False, split_confidence=0.01,
+                               split_criterion='info_gain',
+                               stop_mem_management=False, tie_threshold=0.05,
+                               warning_detection_method=ADWIN(delta=0.01)) low dim
+Time: 590.0949285825094+-95.42014756175145
+Acc: 0.5730066666666667+-0.026825044682576446
+Kappa: 0.00898421505352994+-0.0068618013476307175
+
+LED GRADUAL:
+Evaluated SAMKNNClassifier(ltm_size=0.4, max_window_size=None, min_stm_size=50,
+                 n_neighbors=5, stm_size_option=None, use_ltm=True,
+                 weighting='distance') high dim
+Time: 9512.789567788443+-5135.481016163314
+Acc: 0.09986199723994478+-0.001330289737660026
+Kappa: 0.0+-0.0
+
+Evaluated SAMKNNClassifier(ltm_size=0.4, max_window_size=None, min_stm_size=50,
+                 n_neighbors=5, stm_size_option=None, use_ltm=True,
+                 weighting='distance') low dim
+Time: 793.0908504327139+-516.3590993400562
+Acc: 0.10197333333333332+-0.001617597670071954
+Kappa: 0.0+-0.0
+
+Evaluated AdaptiveRandomForestClassifier(binary_split=False, disable_weighted_vote=False,
+                               drift_detection_method=ADWIN(delta=0.001),
+                               grace_period=50, lambda_value=6,
+                               leaf_prediction='nba', max_byte_size=33554432,
+                               max_features=22, memory_estimate_period=2000000,
+                               n_estimators=10, nb_threshold=0,
+                               no_preprune=False, nominal_attributes=None,
+                               performance_metric='acc', random_state=None,
+                               remove_poor_atts=False, split_confidence=0.01,
+                               split_criterion='info_gain',
+                               stop_mem_management=False, tie_threshold=0.05,
+                               warning_detection_method=ADWIN(delta=0.01)) high dim
+Time: 718.5501503149668+-11.750678997834722
+Acc: 0.999979999599992+-2.828483694421427e-05
+Kappa: 0.9999777770209962+-3.142803830358729e-05
+
+Evaluated AdaptiveRandomForestClassifier(binary_split=False, disable_weighted_vote=False,
+                               drift_detection_method=ADWIN(delta=0.001),
+                               grace_period=50, lambda_value=6,
+                               leaf_prediction='nba', max_byte_size=33554432,
+                               max_features=7, memory_estimate_period=2000000,
+                               n_estimators=10, nb_threshold=0,
+                               no_preprune=False, nominal_attributes=None,
+                               performance_metric='acc', random_state=None,
+                               remove_poor_atts=False, split_confidence=0.01,
+                               split_criterion='info_gain',
+                               stop_mem_management=False, tie_threshold=0.05,
+                               warning_detection_method=ADWIN(delta=0.01)) low dim
+Time: 1573.0920301278431+-27.707869010757996
+Acc: 0.13993333333333333+-0.0021269905709449923
+Kappa: 0.04464884006348413+-0.002405545424626247
+
+LED ABRUPBT:
+Evaluated SAMKNNClassifier(ltm_size=0.4, max_window_size=None, min_stm_size=50,
+                 n_neighbors=5, stm_size_option=None, use_ltm=True,
+                 weighting='distance') high dim
+Time: 9434.494102160135+-5075.387620314444
+Acc: 0.09858863843943544+-0.0005772078327410085
+Kappa: 0.0+-0.0
+
+Evaluated SAMKNNClassifier(ltm_size=0.4, max_window_size=None, min_stm_size=50,
+                 n_neighbors=5, stm_size_option=None, use_ltm=True,
+                 weighting='distance') low dim
+Time: 786.4750173886617+-509.1289966394054
+Acc: 0.10114000000000001+-0.001159425144917369
+Kappa: 0.0+-0.0
+
+Evaluated AdaptiveRandomForestClassifier(binary_split=False, disable_weighted_vote=False,
+                               drift_detection_method=ADWIN(delta=0.001),
+                               grace_period=50, lambda_value=6,
+                               leaf_prediction='nba', max_byte_size=33554432,
+                               max_features=22, memory_estimate_period=2000000,
+                               n_estimators=10, nb_threshold=0,
+                               no_preprune=False, nominal_attributes=None,
+                               performance_metric='acc', random_state=None,
+                               remove_poor_atts=False, split_confidence=0.01,
+                               split_criterion='info_gain',
+                               stop_mem_management=False, tie_threshold=0.05,
+                               warning_detection_method=ADWIN(delta=0.01)) high dim
+Time: 675.494687795639+-45.4111146918847
+Acc: 0.9999666659999867+-4.714139490700634e-05
+Kappa: 0.9999629615562148+-5.2380269530303976e-05
+
+Evaluated AdaptiveRandomForestClassifier(binary_split=False, disable_weighted_vote=False,
+                               drift_detection_method=ADWIN(delta=0.001),
+                               grace_period=50, lambda_value=6,
+                               leaf_prediction='nba', max_byte_size=33554432,
+                               max_features=7, memory_estimate_period=2000000,
+                               n_estimators=10, nb_threshold=0,
+                               no_preprune=False, nominal_attributes=None,
+                               performance_metric='acc', random_state=None,
+                               remove_poor_atts=False, split_confidence=0.01,
+                               split_criterion='info_gain',
+                               stop_mem_management=False, tie_threshold=0.05,
+                               warning_detection_method=ADWIN(delta=0.01)) low dim
+Time: 1582.5063327948253+-148.30281299733502
+Acc: 0.15189333333333332+-0.0025189592207011985
+Kappa: 0.057430641441239626+-0.002378554349987224
+
+SEA GRADUAL:
+Evaluated ReactiveRobustSoftLearningVectorQuantization(confidence=1e-10, gamma=None,
+                                             prototypes_per_class=2) high dim
+Time: 18311.76789244016+-149.87365345856645
+Acc: 0.9773262131909305+-0.011958670880330055
+Kappa: 0.9417848423740768+-0.02827147548133664
+
+Evaluated RSLVQ(gradient_descent='Adadelta') high dim
+Time: 38.67151538530985+-0.36342770986234485
+Acc: 0.9815462975926185+-0.012300677803628398
+Kappa: 0.9529971910613466+-0.029389318523367687
+
+SEA ABRUPBT:
+Evaluated ReactiveRobustSoftLearningVectorQuantization(confidence=1e-10, gamma=None,
+                                             prototypes_per_class=2) high dim
+Time: 18748.492096026737+-584.4199033543812
+Acc: 0.9818796375927518+-0.01210565687954138
+Kappa: 0.9612418091823504+-0.026683681667270736
+
+Evaluated RSLVQ(gradient_descent='Adadelta') high dim
+Time: 40.36846844355265+-0.6625477857000915
+Acc: 0.9834063347933627+-0.012298650566923343
+Kappa: 0.9644197801269444+-0.027115948899243257
+
+LED GRADUAL:
+Evaluated ReactiveRobustSoftLearningVectorQuantization(confidence=1e-10, gamma=None,
+                                             prototypes_per_class=2) high dim
+Time: 17005.05781006813+-27.154628087006966
+Acc: 1.0+-0.0
+Kappa: 1.0+-0.0
+
+Evaluated RSLVQ(gradient_descent='Adadelta') high dim
+Time: 109.02017148335774+-1.4462305987204636
+Acc: 1.0+-0.0
+Kappa: 1.0+-0.0
+
+LED ABRUPBT:
+Evaluated ReactiveRobustSoftLearningVectorQuantization(confidence=1e-10, gamma=None,
+                                             prototypes_per_class=2) high dim
+Time: 17124.226981480915+-8.700750625068519
+Acc: 0.9997133275998853+-0.00040541599620021266
+Kappa: 0.9996814734537441+-0.00045046456169089754
+
+Evaluated RSLVQ(gradient_descent='Adadelta') high dim
+Time: 102.64870858192444+-1.8450034105694881
+Acc: 1.0+-0.0
+Kappa: 1.0+-0.0
+
+SEA GRADUAL:
+Evaluated ReactiveRobustSoftLearningVectorQuantization(confidence=1e-10, gamma=None,
+                                             prototypes_per_class=2) low dim
+Time: 185.96580386161804+-5.444296281314049
+Acc: 0.7334866666666667+-0.021927579792479505
+Kappa: 0.009828675408266227+-0.0035491135482464014
+
+Evaluated RSLVQ(gradient_descent='Adadelta') low dim
+Time: 17.481160243352253+-0.030265934610649685
+Acc: 0.7430066666666667+-0.018274480080763482
+Kappa: 0.00574735948949993+-0.0005668864742828814
+
+SEA ABRUPBT:
+Evaluated ReactiveRobustSoftLearningVectorQuantization(confidence=1e-10, gamma=None,
+                                             prototypes_per_class=2) low dim
+Time: 195.34467538197836+-2.4211542851769803
+Acc: 0.57358+-0.02042056479793509
+Kappa: 0.007955675463696132+-0.009165434181166185
+
+Evaluated RSLVQ(gradient_descent='Adadelta') low dim
+Time: 17.23538867632548+-0.10727335984678227
+Acc: 0.6048266666666667+-0.015396106289867255
+Kappa: 0.006678790548546587+-0.004631087922522766
+
+LED GRADUAL:
+Evaluated ReactiveRobustSoftLearningVectorQuantization(confidence=1e-10, gamma=None,
+                                             prototypes_per_class=2) low dim
+Time: 597.1496873696645+-1.1200721828224918
+Acc: 0.03970666666666667+-0.009895323250011705
+Kappa: -0.06716588526235896+-0.011512059683319729
+
+Evaluated RSLVQ(gradient_descent='Adadelta') low dim
+Time: 69.93970561027527+-0.6295329087857592
+Acc: 0.12456666666666667+-0.006580422141136209
+Kappa: 0.02703874235353428+-0.00727783642935358
+
+LED ABRUPBT:
+Evaluated ReactiveRobustSoftLearningVectorQuantization(confidence=1e-10, gamma=None,
+                                             prototypes_per_class=2) low dim
+Time: 559.2352983951569+-75.1038434544821
+Acc: 0.04974+-0.028339668311397014
+Kappa: -0.05477263735893182+-0.030481800962303265
+
+Evaluated RSLVQ(gradient_descent='Adadelta') low dim
+Time: 70.52599430084229+-0.04502354024681409
+Acc: 0.11220666666666666+-0.0069616920037843906
+Kappa: 0.013342025498031762+-0.007603532708291728
+
