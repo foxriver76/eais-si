@@ -1,0 +1,166 @@
+Evaluated ConceptDriftStream(alpha=90.0,
+                   drift_stream=SEAGenerator(balance_classes=False,
+                                             classification_function=1,
+                                             noise_percentage=0.0,
+                                             random_state=None),
+                   position=25000.0, random_state=None,
+                   stream=SEAGenerator(balance_classes=False,
+                                       classification_function=0,
+                                       noise_percentage=0.0,
+                                       random_state=None),
+                   width=1) ReactiveRobustSoftLearningVectorQuantization(confidence=1e-10, gamma=None,
+                                             prototypes_per_class=2) low dim
+Time: 31532.782914042473+-964.3547002077103
+Acc: 0.6828036560731214+-0.018690373807476124
+Kappa: 0.3275585640001726+-0.053526562348408024
+
+Evaluated ConceptDriftStream(alpha=0.0,
+                   drift_stream=SEAGenerator(balance_classes=False,
+                                             classification_function=2,
+                                             noise_percentage=0.0,
+                                             random_state=None),
+                   position=25000.0, random_state=None,
+                   stream=SEAGenerator(balance_classes=False,
+                                       classification_function=0,
+                                       noise_percentage=0.0,
+                                       random_state=None),
+                   width=10000.0) ReactiveRobustSoftLearningVectorQuantization(confidence=1e-10, gamma=None,
+                                             prototypes_per_class=2) low dim
+Time: 31840.156681537628+-1006.5794563293457
+Acc: 0.7691353827076541+-0.05714114282285643
+Kappa: 0.4023892625816584+-0.11199306377501828
+
+Evaluated ConceptDriftStream(alpha=0.0,
+                   drift_stream=LEDGeneratorDrift(has_noise=False,
+                                                  n_drift_features=7,
+                                                  noise_percentage=0.0,
+                                                  random_state=None),
+                   position=25000.0, random_state=None,
+                   stream=LEDGeneratorDrift(has_noise=False, n_drift_features=3,
+                                            noise_percentage=0.0,
+                                            random_state=None),
+                   width=10000.0) ReactiveRobustSoftLearningVectorQuantization(confidence=1e-10, gamma=None,
+                                             prototypes_per_class=2) low dim
+Time: 32006.70759189129+-941.4305509328842
+Acc: 0.99180223604472089+-0.0027800556011120248
+Kappa: 0.013091655265028368+-0.003089750349523246
+
+Evaluated ConceptDriftStream(alpha=90.0,
+                   drift_stream=LEDGeneratorDrift(has_noise=False,
+                                                  n_drift_features=7,
+                                                  noise_percentage=0.0,
+                                                  random_state=None),
+                   position=25000.0, random_state=None,
+                   stream=LEDGeneratorDrift(has_noise=False, n_drift_features=3,
+                                            noise_percentage=0.0,
+                                            random_state=None),
+                   width=1) ReactiveRobustSoftLearningVectorQuantization(confidence=1e-10, gamma=None,
+                                             prototypes_per_class=2) low dim
+Time: 32123.215750575066+-1038.5591200590134
+Acc: 0.98965299305986118+-0.034450689013780275
+Kappa: 0.0550992844129517+-0.03827574199213407
+
+Evaluated ConceptDriftStream(alpha=0.0,
+                   drift_stream=SEAGenerator(balance_classes=False,
+                                             classification_function=2,
+                                             noise_percentage=0.0,
+                                             random_state=None),
+                   position=25000.0, random_state=None,
+                   stream=SEAGenerator(balance_classes=False,
+                                       classification_function=0,
+                                       noise_percentage=0.0,
+                                       random_state=None),
+                   width=10000.0) ReactiveRobustSoftLearningVectorQuantization(confidence=1e-10, gamma=None,
+                                             prototypes_per_class=2) high dim
+Time: 189008.0793403387+-1968.7268353700638
+Acc: 0.9091681833636672+-0.013670273405468114
+Kappa: 0.7539193874957484+-0.025429900884611056
+
+Evaluated ConceptDriftStream(alpha=90.0,
+                   drift_stream=LEDGeneratorDrift(has_noise=False,
+                                                  n_drift_features=7,
+                                                  noise_percentage=0.0,
+                                                  random_state=None),
+                   position=25000.0, random_state=None,
+                   stream=LEDGeneratorDrift(has_noise=False, n_drift_features=3,
+                                            noise_percentage=0.0,
+                                            random_state=None),
+                   width=1) ReactiveRobustSoftLearningVectorQuantization(confidence=1e-10, gamma=None,
+                                             prototypes_per_class=2) high dim
+Time: 189522.24349939823+-1899.448779463768
+Acc: 0.9861191223824477+-0.12185243704874096
+Kappa: 0.3956544075304965+-0.1354172334115621
+
+Evaluated ConceptDriftStream(alpha=0.0,
+                   drift_stream=LEDGeneratorDrift(has_noise=False,
+                                                  n_drift_features=7,
+                                                  noise_percentage=0.0,
+                                                  random_state=None),
+                   position=25000.0, random_state=None,
+                   stream=LEDGeneratorDrift(has_noise=False, n_drift_features=3,
+                                            noise_percentage=0.0,
+                                            random_state=None),
+                   width=10000.0) ReactiveRobustSoftLearningVectorQuantization(confidence=1e-10, gamma=None,
+                                             prototypes_per_class=2) high dim
+Time: 192183.74588501453+-1785.8495885133743  
+Acc: 0.9933506670133403+-0.035700714014280266
+Kappa: 0.48149932987671706+-0.03965273687078674
+
+Evaluated ConceptDriftStream(alpha=90.0,
+                   drift_stream=SEAGenerator(balance_classes=False,
+                                             classification_function=1,
+                                             noise_percentage=0.0,
+                                             random_state=None),
+                   position=25000.0, random_state=None,
+                   stream=SEAGenerator(balance_classes=False,
+                                       classification_function=0,
+                                       noise_percentage=0.0,
+                                       random_state=None),
+                   width=1) ReactiveRobustSoftLearningVectorQuantization(confidence=1e-10, gamma=None,
+                                             prototypes_per_class=2) high dim
+Time: 193428.3584884405+-1654.8282891511917 
+Acc: 0.8828476569531392+-0.006530130602612039
+Kappa: 0.7463463211483876+-0.020923469034142883
+
+
+
+--------------------------------------------------
+High dim test Nasdaq TFIDF: 
+ReactiveRobustSoftLearningVectorQuantization(confidence=1e-10, gamma=None,
+                                             prototypes_per_class=2)
+Acc: 0.20309145556032632 +- 0.0009247943983882179
+Kappa: -0.009554838493827211 +- 0.0006209352525442524
+Time: 21575.709591150284 +- 28.05888080596924
+--------------------------------------------------
+
+
+--------------------------------------------------
+Nasdaq TFIDF Low dim test: 
+ReactiveRobustSoftLearningVectorQuantization(confidence=1e-10, gamma=None,
+                                             prototypes_per_class=2)
+Acc: 0.1841496845790534 +- 1.651418568550389e-05
+Kappa: 2.4490630680273906e-05 +- 2.4490630680273906e-05
+Time: 9409.939093351364 +- 5.431603670120239
+--------------------------------------------------
+
+
+
+SKIP-GRAM
+--------------------------------------------------
+Low dim test skip-gram: 
+ReactiveRobustSoftLearningVectorQuantization(confidence=1e-10, gamma=None,
+                                             prototypes_per_class=2)
+Acc: 0.30778122729374463 +- 0.035471299293216185
+Kappa: 0.10666729508008077 +- 0.04599404032346599
+Time: 25906.82353901863 +- 26.208059310913086
+--------------------------------------------------
+
+SKIP-GRAM
+--------------------------------------------------
+High dim test skip-gram: 
+ReactiveRobustSoftLearningVectorQuantization(confidence=1e-10, gamma=None,
+                                             prototypes_per_class=2)
+Acc: 0.30074641654006207 +- 0.005845828654468588
+Kappa: 0.08914661705961346 +- 0.007390757323907371
+Time: 25887.488396286964 +- 43.786670565605164
+--------------------------------------------------
